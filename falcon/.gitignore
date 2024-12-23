@@ -1,0 +1,4 @@
+generated_deps/
+*.o
+*.a
+editor

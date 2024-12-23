@@ -1,0 +1,6 @@
+- buffer to store and display text
+- make wrapper for (WINDOW *)
+- make backspace, arrow keys, etc work
+- open/save files
+- color highlighting for keywords
+- window resize breaks everything
