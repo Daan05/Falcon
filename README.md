@@ -1,1 +1,4 @@
-Falcon a modern blazingly fast text editor proudly written in c++.
+<H2>FALCON TEXT EDITOR</H2>
+Falcon is... kinda crap for now, but... 
+proudly written in c++.
+
