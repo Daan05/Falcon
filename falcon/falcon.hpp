@@ -4,9 +4,12 @@
 #include <cstddef>
 #include <ncurses.h>
 #include <vector>
+#include <filesystem>
 
 struct FalconConfig
 {
+    std::filesystem::path workingDirectory;
+
     size_t term_rows;
     size_t term_cols;
 
@@ -24,14 +27,16 @@ private:
     WINDOW *lineNumWin;
     WINDOW *textBufWin;
 
-    std::vector<char> line = { 'h', 'e', 'l', 'l', 'o' };
+    std::vector<std::string> lines;
 
 public:
     FalconEditor();
     ~FalconEditor();
 
+    void setPath(char const *str);
+
     void initialize();
-    void openFile();
+    void openFile(std::string filename);
     void run();
 
 private:

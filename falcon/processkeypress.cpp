@@ -11,3 +11,5 @@ void FalconEditor::processKeypress(int ch)
         break;
     }
 }
+
+// This function takes in a keypress and processes the key

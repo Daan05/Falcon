@@ -7,9 +7,9 @@ void FalconEditor::drawLines()
     // draw text
     for (size_t ix = conf.cur_row; ix != conf.file_rows; ++ix)
     {
-        for (const auto& ch : line)
+        for (const std::string& line : lines)
         {
-            waddch(textBufWin, ch);
+            wprintw(textBufWin, "%s\n", line.c_str());
         }
     }
 
@@ -18,3 +18,4 @@ void FalconEditor::drawLines()
     wrefresh(textBufWin);
 }
 
+// This functions draws the text from the current file onto the screen
