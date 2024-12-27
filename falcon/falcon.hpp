@@ -4,17 +4,19 @@
 #include <cstddef>
 #include <ncurses.h>
 #include <vector>
-#include <filesystem>
+#include <string>
 
 struct FalconConfig
 {
-    std::filesystem::path workingDirectory;
-
     size_t term_rows;
     size_t term_cols;
 
-    size_t cur_row;
-    size_t cur_col;
+    size_t cursor_row;
+    size_t cursor_col;
+
+    size_t scrolloff;
+    size_t row;
+    size_t current_row;
 
     size_t file_rows;
 };
@@ -33,10 +35,8 @@ public:
     FalconEditor();
     ~FalconEditor();
 
-    void setPath(char const *str);
-
     void initialize();
-    void openFile(std::string filename);
+    void openFile(const char *filename);
     void run();
 
 private:
@@ -44,6 +44,7 @@ private:
     void processKeypress(int ch);
 
     void drawLines();
+    void drawLineNumbers();
 };
 
 #endif

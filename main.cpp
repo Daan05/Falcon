@@ -7,7 +7,7 @@ try
 {
     FalconEditor editor;
     if (argc > 1)
-        editor.setPath(argv[1]);
+        editor.openFile(argv[1]);
     editor.initialize();
     editor.run();
 }
