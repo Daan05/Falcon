@@ -2,8 +2,8 @@
 
 void FalconEditor::drawLineNumbers()
 {
-    wmove(lineNumWin, 1, 0);
-    for (size_t ix = conf.row + 1; ix != conf.row + conf.term_rows - 1; ++ix)
+    wmove(lineNumWin, 0, 0);
+    for (size_t ix = conf.current_row + 1; ix != conf.current_row + conf.term_rows; ++ix)
     {
         wprintw(lineNumWin, "%*zu\n", 5, ix);
     }

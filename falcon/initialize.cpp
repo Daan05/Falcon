@@ -1,4 +1,5 @@
 #include "falcon.ih"
+#include <ncurses.h>
 
 void FalconEditor::initialize()
 {
@@ -8,29 +9,27 @@ void FalconEditor::initialize()
     keypad(stdscr, TRUE);
 
     getmaxyx(stdscr, conf.term_rows, conf.term_cols);
-    box(stdscr, 0 , 0);
 
-    lineNumWin = newwin(conf.term_rows - 2, 6, 1, 1);
-    textBufWin = newwin(conf.term_rows - 2, conf.term_cols - 9, 1, 8);
+    lineNumWin = newwin(conf.term_rows, 6, 0, 0);
+    textBufWin = newwin(conf.term_rows, conf.term_cols - 6, 0, 8);
 
     conf.cursor_row = 0;
     conf.cursor_col = 0;
 
-    conf.row = 0;
+    conf.current_row = 0;
     conf.scrolloff = 8;
 
-    conf.current_row = conf.row + conf.cursor_row;
+    conf.relative_row = 0;
 
-    move(0, 2);
-	printw(" Falcon -- The best terminal based text editor out there ");
-    move(1, 1);
+    /*start_color();*/
+    /*init_pair(1, COLOR_GREEN, COLOR_BLACK);*/
+    /*attron(COLOR_PAIR(1));*/
+    /*//print();*/
+    /*attroff(COLOR_PAIR(1));*/
+   
     refresh();
-
     drawLineNumbers();
-    
-    wmove(textBufWin, 1, 0);
     drawLines();
-    wrefresh(textBufWin);
 }
 
 // This function enabled rawmode and configures the terminal to the way we want it.

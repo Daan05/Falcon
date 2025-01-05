@@ -15,7 +15,7 @@ struct FalconConfig
     size_t cursor_col;
 
     size_t scrolloff;
-    size_t row;
+    size_t relative_row;
     size_t current_row;
 
     size_t file_rows;

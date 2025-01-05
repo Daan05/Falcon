@@ -13,9 +13,7 @@ void FalconEditor::openFile(char const *filename)
         lines.push_back(line);
     }
 
-    // file is open
     file.close();
-
     conf.file_rows = lines.size();
 }
 

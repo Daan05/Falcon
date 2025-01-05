@@ -8,16 +8,26 @@ void FalconEditor::processKeypress(int ch)
         quit = true;
         break;
     case KEY_UP:
-        if (conf.row > 0)
+        if (conf.relative_row > 0)
         {
-            --conf.row;
+            --conf.relative_row;
+            if (conf.current_row > 0 && conf.relative_row < conf.scrolloff)
+            {
+                --conf.current_row;
+                ++conf.relative_row;
+            }
             drawLineNumbers();
         }
         break;
     case KEY_DOWN:
-        if (conf.row + conf.term_rows - 3 < conf.file_rows)
+        if (conf.relative_row + conf.current_row < conf.file_rows - 1)
         {
-            ++conf.row;
+            ++conf.relative_row;
+            if (conf.current_row + conf.term_rows - 1 < conf.file_rows && conf.relative_row + 2 > conf.term_rows - conf.scrolloff)
+            {
+                ++conf.current_row;
+                --conf.relative_row;
+            }
             drawLineNumbers();
         }
         break;
