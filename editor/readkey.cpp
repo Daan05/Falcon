@@ -1,6 +1,6 @@
-#include "falcon.ih"
+#include "editor.ih"
 
-int FalconEditor::readKey()
+int Editor::readKey()
 {
     return getch();
 }

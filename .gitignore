@@ -5,5 +5,5 @@ cmake_install.cmake
 .ninja_log
 build.ninja
 *.a
-editor
+falcon
 CMakeCache.txt

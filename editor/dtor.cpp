@@ -1,6 +1,6 @@
-#include "falcon.ih"
+#include "editor.ih"
 
-FalconEditor::~FalconEditor()
+Editor::~Editor()
 {
 	endwin();
 }

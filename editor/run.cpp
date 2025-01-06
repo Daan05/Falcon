@@ -1,6 +1,6 @@
-#include "falcon.ih"
+#include "editor.ih"
 
-void FalconEditor::run()
+void Editor::run()
 {
     while (!quit)
     {

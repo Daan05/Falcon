@@ -1,4 +1,4 @@
-#include "falcon.hpp"
+#include "editor.hpp"
 
 #include <iostream>
 #include <ncurses.h>

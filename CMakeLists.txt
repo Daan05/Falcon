@@ -10,11 +10,11 @@ set(CMAKE_CXX_FLAGS "-O3 -Wall -Wpedantic -lncurses")
 
 # all files in falcon/ are needed for FalconLib
 file(GLOB FALCON_SRC
-     "falcon/*.hpp"
-     "falcon/*.cpp"
+     "editor/*.hpp"
+     "editor/*.cpp"
 )
 add_library(FalconLib ${FALCON_SRC})
 
-add_executable(editor main.cpp)
+add_executable(falcon main.cpp)
 
-target_link_libraries(editor PRIVATE FalconLib)
+target_link_libraries(falcon PRIVATE FalconLib)

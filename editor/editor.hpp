@@ -1,39 +1,32 @@
-#ifndef FALCON_EDITOR_HPP
-#define FALCON_EDITOR_HPP
+#ifndef EDITOR_HPP
+#define EDITOR_HPP
 
 #include <cstddef>
 #include <ncurses.h>
-#include <vector>
 #include <string>
+#include <vector>
 
-struct FalconConfig
+class Editor
 {
+private:
+    bool quit = false;
+
     size_t term_rows;
     size_t term_cols;
-
-    size_t cursor_row;
-    size_t cursor_col;
 
     size_t scrolloff;
     size_t relative_row;
     size_t current_row;
-
     size_t file_rows;
-};
 
-class FalconEditor
-{
-private:
-    bool quit = false;
-    FalconConfig conf;
     WINDOW *lineNumWin;
     WINDOW *textBufWin;
 
     std::vector<std::string> lines;
 
 public:
-    FalconEditor();
-    ~FalconEditor();
+    Editor();
+    ~Editor();
 
     void initialize();
     void openFile(const char *filename);
@@ -45,6 +38,14 @@ private:
 
     void drawLines();
     void drawLineNumbers();
+
+    void keypressedArrowUp();
+    void keypressedArrowDown();
 };
+
+constexpr inline int control_key(int ch)
+{
+    return ((ch) & 0x1f);
+}
 
 #endif
