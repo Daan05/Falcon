@@ -15,6 +15,6 @@ file(GLOB FALCON_SRC
 )
 add_library(FalconLib ${FALCON_SRC})
 
-add_executable(falcon main.cpp)
+add_executable(editor main.cpp)
 
-target_link_libraries(falcon PRIVATE FalconLib)
+target_link_libraries(editor PRIVATE FalconLib)
