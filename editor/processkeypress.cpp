@@ -13,11 +13,16 @@ void Editor::processKeypress(int ch)
     case KEY_BACKSPACE:
         deleteCharBack();
         break;
+    case KEY_DC:
+        if (cursor_col < lines[current_row + cursor_row].size())
+            ++cursor_col;
+        deleteCharBack();
+        break;
     case KEY_UP:
-        moveColumnUp();
+        moveCursorUp();
         break;
     case KEY_DOWN:
-        moveColumnDown();
+        moveCursorDown();
         break;
     case KEY_LEFT:
         if (cursor_col > 0)
@@ -29,13 +34,16 @@ void Editor::processKeypress(int ch)
         break;
     case controlKey('u'):
         for (size_t ix = 0; ix != term_rows / 2; ++ix)
-            moveColumnUp();
+            moveCursorUp();
         cursor_col = 0;
         break;
     case controlKey('d'):
         for (size_t ix = 0; ix != term_rows / 2; ++ix)
-            moveColumnDown();
+            moveCursorDown();
         cursor_col = 0;
+        break;
+    case controlKey('s'):
+        saveFile();
         break;
     default:
         break;

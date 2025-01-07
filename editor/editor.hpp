@@ -24,6 +24,7 @@ private:
     WINDOW *textBufWin;
 
     std::vector<std::string> lines;
+    std::string filename;
 
 public:
     Editor();
@@ -31,6 +32,7 @@ public:
 
     void initialize();
     void openFile(const char *filename);
+    void saveFile();
     void run();
 
 private:
@@ -40,8 +42,8 @@ private:
     void drawLines();
     void drawLineNumbers();
 
-    void moveColumnUp();
-    void moveColumnDown();
+    void moveCursorUp();
+    void moveCursorDown();
     void deleteCharBack();
 };
 

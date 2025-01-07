@@ -2,6 +2,7 @@
 
 void Editor::openFile(char const *filename)
 {
+    this->filename = filename;
     std::ifstream file(filename);
 
     if (!file)
