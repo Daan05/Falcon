@@ -2,9 +2,13 @@
 
 void Editor::deleteCharBack()
 {
-    if (cursor_col > 0) // cursor not at start of line
+    if (cursor_col > 0
+        && lines[current_row + cursor_row].size()
+            != 0) // cursor not at start of line
     {
-        lines[current_row + cursor_row].erase(cursor_col - 1, 1);
+        lines[current_row + cursor_row].erase(
+            std::min(cursor_col, lines[current_row + cursor_row].size()) - 1, 1
+        );
         --cursor_col;
     }
     else
