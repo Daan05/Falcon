@@ -1,5 +1,4 @@
 #include "editor.ih"
-#include <ncurses.h>
 
 void Editor::initialize()
 {
@@ -15,7 +14,8 @@ void Editor::initialize()
 
     current_row = 0;
     scrolloff = 8;
-    relative_row = 0;
+    cursor_row = 0;
+    cursor_col = 0;
 
     /*start_color();*/
     /*init_pair(1, COLOR_GREEN, COLOR_BLACK);*/
@@ -28,6 +28,6 @@ void Editor::initialize()
     drawLines();
 }
 
-// This function enabled rawmode and configures the terminal to the way we want it.
-// gets the window size, creates a  window for the line numbers and text buffer.
-// prints the line numbers
+// This function enabled rawmode and configures the terminal to the way we want
+// it. gets the window size, creates a  window for the line numbers and text
+// buffer. prints the line numbers

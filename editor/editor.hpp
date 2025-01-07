@@ -15,7 +15,8 @@ private:
     size_t term_cols;
 
     size_t scrolloff;
-    size_t relative_row;
+    size_t cursor_row;
+    size_t cursor_col;
     size_t current_row;
     size_t file_rows;
 
@@ -39,13 +40,11 @@ private:
     void drawLines();
     void drawLineNumbers();
 
-    void keypressedArrowUp();
-    void keypressedArrowDown();
+    void moveColumnUp();
+    void moveColumnDown();
+    void deleteCharBack();
 };
 
-constexpr inline int control_key(int ch)
-{
-    return ((ch) & 0x1f);
-}
+constexpr inline int controlKey(int ch) { return ((ch) & 0x1f); }
 
 #endif

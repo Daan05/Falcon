@@ -9,9 +9,9 @@ Basically no features, but... it has scrolloff, so Falcon is pretty much on par 
 Dependencies:
 
 - C++ compiler (I recommend gcc)
-- lncurses library (should already be installed)
+- ncurses library
 - cmake (3.31 or newer)
-- gnu make or ninja
+- ninja or gnu make
 
 Personally i use ninja, because it compiles the project generally faster.
 
