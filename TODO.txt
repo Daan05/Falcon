@@ -1,6 +1,3 @@
-- buffer to store and display text
-- make wrapper for (WINDOW *)
-- make backspace, arrow keys, etc work
-- open/save files
+- make wrapper for (WINDOW *) -- low priority, things are working fine for now
 - color highlighting for keywords
-- window resize breaks everything
+- normal/insert mode

@@ -1,14 +1,14 @@
 #include "editor.ih"
 
-void Editor::moveColumnUp()
+void Editor::moveCursorUp()
 {
-    if (cursor_row > 0)
+    if (cursorRow > 0)
     {
-        --cursor_row;
-        if (current_row > 0 && cursor_row < scrolloff)
+        --cursorRow;
+        if (currentRow > 0 && cursorRow < scrollOff)
         {
-            --current_row;
-            ++cursor_row;
+            --currentRow;
+            ++cursorRow;
             drawLineNumbers();
         }
     }

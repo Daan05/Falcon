@@ -1,4 +1,5 @@
 #include "editor.ih"
+#include <ncurses.h>
 
 void Editor::processKeypress(int ch)
 {
@@ -14,8 +15,8 @@ void Editor::processKeypress(int ch)
         deleteCharBack();
         break;
     case KEY_DC:
-        if (cursor_col < lines[current_row + cursor_row].size())
-            ++cursor_col;
+        if (cursorCol < lines[currentRow + cursorRow].size())
+            ++cursorCol;
         deleteCharBack();
         break;
     case KEY_UP:
@@ -25,26 +26,28 @@ void Editor::processKeypress(int ch)
         moveCursorDown();
         break;
     case KEY_LEFT:
-        if (cursor_col > 0)
-            --cursor_col;
+        if (cursorCol > 0)
+            --cursorCol;
         break;
     case KEY_RIGHT:
-        if (cursor_col < lines[current_row + cursor_row].size())
-            ++cursor_col;
+        if (cursorCol < lines[currentRow + cursorRow].size())
+            ++cursorCol;
         break;
     case controlKey('u'):
-        for (size_t ix = 0; ix != term_rows / 2; ++ix)
+        for (size_t ix = 0; ix != termRows / 2; ++ix)
             moveCursorUp();
-        cursor_col = 0;
+        cursorCol = 0;
         break;
     case controlKey('d'):
-        for (size_t ix = 0; ix != term_rows / 2; ++ix)
+        for (size_t ix = 0; ix != termRows / 2; ++ix)
             moveCursorDown();
-        cursor_col = 0;
+        cursorCol = 0;
         break;
     case controlKey('s'):
         saveFile();
         break;
+    case KEY_RESIZE:
+        resizeTerminal();
     default:
         break;
     }

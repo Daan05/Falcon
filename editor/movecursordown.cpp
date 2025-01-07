@@ -1,15 +1,15 @@
 #include "editor.ih"
 
-void Editor::moveColumnDown()
+void Editor::moveCursorDown()
 {
-    if (cursor_row + current_row < file_rows - 1)
+    if (cursorRow + currentRow < fileRows - 1)
     {
-        ++cursor_row;
-        if (current_row + term_rows - 1 < file_rows
-            && cursor_row + 2 > term_rows - scrolloff)
+        ++cursorRow;
+        if (currentRow + termRows - 1 < fileRows
+            && cursorRow + 2 > termRows - scrollOff)
         {
-            ++current_row;
-            --cursor_row;
+            ++currentRow;
+            --cursorRow;
             drawLineNumbers();
         }
     }

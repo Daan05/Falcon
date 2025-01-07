@@ -2,13 +2,12 @@
 
 void Editor::drawLines()
 {
-    // move cursor to start
+
     wmove(textBufWin, 0, 0);
-    // draw text
-    for (size_t ix = current_row;
-         ix != std::min(current_row + term_rows - 1, file_rows); ++ix)
+    for (size_t ix = currentRow;
+         ix != std::min(currentRow + termRows - 1, fileRows); ++ix)
     {
-        if (lines[ix].size() > term_cols)
+        if (lines[ix].size() > termCols)
             throw std::runtime_error(
                 "A line was longer than the terminal width. As things break "
                 "when this happens, this exception is a temporary \"solution\""
@@ -18,8 +17,8 @@ void Editor::drawLines()
 
     // move cursor to correct position and refresh screen
     wmove(
-        textBufWin, cursor_row,
-        std::min(cursor_col, lines[current_row + cursor_row].size())
+        textBufWin, cursorRow,
+        std::min(cursorCol, lines[currentRow + cursorRow].size())
     );
     wrefresh(textBufWin);
 }

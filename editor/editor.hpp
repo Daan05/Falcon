@@ -11,14 +11,14 @@ class Editor
 private:
     bool quit = false;
 
-    size_t term_rows;
-    size_t term_cols;
+    size_t termRows;
+    size_t termCols;
 
-    size_t scrolloff;
-    size_t cursor_row;
-    size_t cursor_col;
-    size_t current_row;
-    size_t file_rows;
+    size_t scrollOff;
+    size_t cursorRow;
+    size_t cursorCol;
+    size_t currentRow;
+    size_t fileRows;
 
     WINDOW *lineNumWin;
     WINDOW *textBufWin;
@@ -31,6 +31,7 @@ public:
     ~Editor();
 
     void initialize();
+    void resizeTerminal();
     void openFile(const char *filename);
     void saveFile();
     void run();
