@@ -46,6 +46,7 @@ private:
     void moveCursorUp();
     void moveCursorDown();
     void deleteCharBack();
+    void deleteCharForw();
 };
 
 constexpr inline int controlKey(int ch) { return ((ch) & 0x1f); }

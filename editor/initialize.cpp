@@ -1,5 +1,4 @@
 #include "editor.ih"
-#include <ncurses.h>
 
 void Editor::initialize()
 {

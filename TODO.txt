@@ -1,3 +1,8 @@
-- make wrapper for (WINDOW *) -- low priority, things are working fine for now
+- fix bug that jumps 2 lines up when removing a char from the very last line
+- allow for input
+- stop cursor from blinking
+- fix crash when removing a line when file is smaller than termRows
 - color highlighting for keywords
 - normal/insert mode
+- tabs (4 spaces)
+- make wrapper for (WINDOW *) -- low priority, things are working fine for now

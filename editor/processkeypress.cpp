@@ -1,5 +1,4 @@
 #include "editor.ih"
-#include <ncurses.h>
 
 void Editor::processKeypress(int ch)
 {
@@ -15,9 +14,7 @@ void Editor::processKeypress(int ch)
         deleteCharBack();
         break;
     case KEY_DC:
-        if (cursorCol < lines[currentRow + cursorRow].size())
-            ++cursorCol;
-        deleteCharBack();
+        deleteCharForw();
         break;
     case KEY_UP:
         moveCursorUp();
