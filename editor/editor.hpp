@@ -30,7 +30,6 @@ public:
     Editor();
     ~Editor();
 
-    void initialize();
     void openFile(const char *filename);
     void run();
 
