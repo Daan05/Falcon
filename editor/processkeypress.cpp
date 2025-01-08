@@ -47,6 +47,8 @@ void Editor::processKeypress(int ch)
     case KEY_RESIZE:
         resizeTerminal();
     default:
+        insertChar(ch);
+
         break;
     }
 }
