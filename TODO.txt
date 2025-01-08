@@ -1,5 +1,3 @@
-- fix crash when removing a line when file is smaller than termRows
-- fix bug that jumps 2 lines when deleting an empty line with an empty line above it
 - allow for input
 - stop cursor from blinking
 - color highlighting for keywords
