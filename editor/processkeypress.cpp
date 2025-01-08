@@ -44,9 +44,15 @@ void Editor::processKeypress(int ch)
     case controlKey('s'):
         saveFile();
         break;
+    case controlKey('i'):
+        cursorCol = 0;
+        break;
+    case controlKey('a'):
+        cursorCol = lines[currentRow + cursorRow].size();
     case KEY_RESIZE:
         resizeTerminal();
     default:
+        insertChar(ch);
         break;
     }
 }

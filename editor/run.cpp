@@ -4,8 +4,8 @@ void Editor::run()
 {
     while (!quit)
     {
-        processKeypress(readKey());
         drawLines();
+        processKeypress(readKey());
     }
 }
 

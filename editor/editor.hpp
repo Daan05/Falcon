@@ -30,7 +30,6 @@ public:
     Editor();
     ~Editor();
 
-    void initialize();
     void openFile(const char *filename);
     void run();
 
@@ -48,6 +47,8 @@ private:
     void moveCursorDown();
     void deleteCharBack();
     void deleteCharForw();
+
+    void insertChar(int ch);
 };
 
 constexpr inline int controlKey(int ch) { return ((ch) & 0x1f); }

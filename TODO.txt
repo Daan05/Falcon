@@ -1,4 +1,4 @@
-- allow for input
+- program crashes when no input file is provided
 - stop cursor from blinking
 - color highlighting for keywords
 - normal/insert mode

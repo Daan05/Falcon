@@ -18,5 +18,4 @@ void Editor::resizeTerminal()
 
     refresh();
     drawLineNumbers();
-    drawLines();
 }
