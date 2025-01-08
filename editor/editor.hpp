@@ -31,14 +31,15 @@ public:
     ~Editor();
 
     void initialize();
-    void resizeTerminal();
     void openFile(const char *filename);
-    void saveFile();
     void run();
 
 private:
     int readKey();
     void processKeypress(int ch);
+
+    void resizeTerminal();
+    void saveFile();
 
     void drawLines();
     void drawLineNumbers();

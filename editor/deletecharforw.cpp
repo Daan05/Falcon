@@ -11,5 +11,6 @@ void Editor::deleteCharForw()
     {
         lines[currentRow + cursorRow] += lines[currentRow + cursorRow + 1];
         lines.erase(lines.begin() + currentRow + cursorRow + 1);
+        --fileRows;
     }
 }
