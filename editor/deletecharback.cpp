@@ -36,7 +36,7 @@ void Editor::deleteCharBack()
         }
     }
 
-    if (currentRow + termRows > fileRows)
+    if (currentRow > fileRows - termRows)
     {
         currentRow = fileRows - termRows;
         drawLineNumbers();

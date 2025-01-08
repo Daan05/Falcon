@@ -9,8 +9,11 @@ void Editor::deleteCharForw()
     }
     else
     {
-        lines[currentRow + cursorRow] += lines[currentRow + cursorRow + 1];
-        lines.erase(lines.begin() + currentRow + cursorRow + 1);
-        --fileRows;
+        if (currentRow + cursorRow < fileRows - 1)
+        {
+            lines[currentRow + cursorRow] += lines[currentRow + cursorRow + 1];
+            lines.erase(lines.begin() + currentRow + cursorRow + 1);
+            --fileRows;
+        }
     }
 }

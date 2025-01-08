@@ -24,7 +24,8 @@ void Editor::processKeypress(int ch)
         break;
     case KEY_LEFT:
         if (cursorCol > 0)
-            --cursorCol;
+            cursorCol
+                = std::min(cursorCol, lines[currentRow + cursorRow].size()) - 1;
         break;
     case KEY_RIGHT:
         if (cursorCol < lines[currentRow + cursorRow].size())
