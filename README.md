@@ -1,9 +1,14 @@
 <H1>FALCON TEXT EDITOR</H1>
-Falcon is... kinda crap for now, but... 
+Falcon is somwhat decent now, and... 
 proudly written in C++.
 
 <H2>FEATURES</H2>
-Basically no features, but... it has scrolloff, so Falcon is pretty much on par with the likes of VSCode neovim or sublime text
+
+- open/save files
+- scroll off
+- remove/add charcters
+- remove/add lines
+- file navigation with arrow keys, <C-d> <C-u> and scroll wheel
 
 <H2>HOW TO RUN</H2>
 Dependencies:
